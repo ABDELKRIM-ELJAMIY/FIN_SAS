@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-//////////////////////////////
-typedef struct {
+typedef struct { //structure de la date_echeance
     int jour;
     int moi;
     int anee;
 
 }date_echeance;
 
- typedef struct {
+ typedef struct { //structure tache :: une structure embarqué
     char titre [100];
     char description[256];
     int priorite;
@@ -70,7 +69,7 @@ if (k[i].priorite == 1) {
 }
 
 
-void supprimer(){
+void supprimer(){ // fonction de supprimer
     int s;
     printf("Entrez le numéro de la tâche que vous souhaitez supprimer : ");
     scanf("%d",&s);
@@ -82,7 +81,7 @@ void supprimer(){
     }
     c--;
 }
-    void   mettre_a_jour() {
+    void   mettre_a_jour() { // fonction pour Modifier les information d une tache
     int M;
     printf("Entrez le numéro de la tâche à mettre à jour : ");
     scanf("%d", &M);
@@ -116,7 +115,7 @@ void supprimer(){
     printf("Tâche mise à jour avec succès !\n");
 }
 
-void filtrer_par_priorite() {
+void filtrer_par_priorite() { // fonction pour filtrer les taches selon mleur priorite
     int priorite_filter;
     bool found = false;
 
@@ -143,11 +142,12 @@ void filtrer_par_priorite() {
 int main(){
     int choix ;
 
-    do{
+    do{   // une boucle  pour afficher  le menu chaque  fois
         printf("==============================\n");
         printf("::::::::::: MENU :::::::::::::\n");
         printf("==============================\n");
-        printf("           Entrer:\n");
+        printf("           Entrer:\n"); // Demander à l’utilisateur d’entrer
+        //la tâche qu’il souhaite que le programme effectue
         printf("1.pour ajouter une tache:\n");
         printf("2.pour Afficher la Liste des Tâches:\n");
         printf("3.pour Modifier une Tâche :\n");
