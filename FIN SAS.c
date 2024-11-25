@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+//////////////////////////////
 typedef struct {
     int jour;
-    int moi; 
+    int moi;
     int anee;
-    
+
 }date_echeance;
 
  typedef struct {
@@ -18,21 +19,21 @@ typedef struct {
 
 int c=0;
 tache k[100];
-// fonctionne d'ajouter une tâche 
+// fonctionne d'ajouter une tâche
 void ajouter (){
     int size ;
         if (c >= 100) {
         printf("Limite maximale de transaction atteinte .\n");
         return;
     }
- 
+
     printf("  Ajouter la  tache: \n");
     printf("  Entrer le titre de la tache :\n");
     scanf("%s", k[c].titre);
-    
+
     printf("  la description de la tache :\n");
     scanf("%s",k[c].description);
-    
+
     printf("  la date d'échéance:\n");
     printf(" le jour :");
     scanf("%d",&k[c].date_echeance.jour);
@@ -40,15 +41,15 @@ void ajouter (){
     scanf("%d",&k[c].date_echeance.moi);
     printf("l'anee:");
     scanf("%d",&k[c].date_echeance.anee);
-    
-    
+
+
     printf("   Définir la priorité (1:pour High/0:pour Low):\n");
     scanf("%d",&k[c].priorite);
     c++;
     printf("   Tâche ajoutée \n ");
-    
+
 };
-//FONCTION D AFFFICHAGE 
+//FONCTION D AFFFICHAGE
 void afficher (){
 if (c==0){
 printf (" aucun tache pour afficher.\n");
@@ -73,7 +74,7 @@ void supprimer(){
     int s;
     printf("Entrez le numéro de la tâche que vous souhaitez supprimer : ");
     scanf("%d",&s);
-    if (s < 1 || s > c){ 
+    if (s < 1 || s > c){
         printf(" la tache n’existe pas !!!");
     }
     for (int j = s; j < c - 1;j++){
@@ -141,7 +142,7 @@ void filtrer_par_priorite() {
 }
 int main(){
     int choix ;
-    
+
     do{
         printf("==============================\n");
         printf("::::::::::: MENU :::::::::::::\n");
@@ -158,8 +159,8 @@ int main(){
             case 1 :
             printf("vous avez choisi le choix d'ajout. \n");
             ajouter ();
-            break; 
-            
+            break;
+
             case 2 :
             printf("vous avez choisi le choix d'affichage. \n");
             afficher ();
@@ -169,14 +170,14 @@ int main(){
             mettre_a_jour();
               break;
             case 4:
-             printf("vous avez choisi le choix de supprimer. \n");  
+             printf("vous avez choisi le choix de supprimer. \n");
              supprimer();
              break;
             case 5:
-            printf("vous avez choisi le choix de filtrer. \n");  
+            printf("vous avez choisi le choix de filtrer. \n");
             filtrer_par_priorite();
         }
     }
-while(choix < 6 ); 
+while(choix < 6 );
 return 0;
 }
