@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-typedef struct { //structure de la date_echeance
+typedef struct {
     int jour;
     int moi;
     int anee;
 
 }date_echeance;
 
- typedef struct { //structure tache :: une structure embarqué
+ typedef struct {
     char titre [100];
     char description[256];
     int priorite;
@@ -60,16 +60,18 @@ for(i=0;i<c;i++){
 printf("le titre: %s \n",k[i].titre);
 printf("la description :%s \n", k[i].description);
 printf("la date d'échéance: \n");
-if (k[i].priorite == 1) {
-    printf("Priorité : High\n");
-} else if (k[i].priorite == 0) {
-    printf("Priorité : Low\n");
+//
+if (k[i].priorite == 1) {           // Si la priorité est (High)
+    printf("Priorité : High\n");   // Affiche "Priorité : High"
+}
+else if (k[i].priorite == 0) {    // Si la priorité est  (Low)
+    printf("Priorité : Low\n");  // Affiche "Priorité : Low"
 }
 }
 }
 
 
-void supprimer(){ // fonction de supprimer
+void supprimer(){
     int s;
     printf("Entrez le numéro de la tâche que vous souhaitez supprimer : ");
     scanf("%d",&s);
@@ -81,7 +83,7 @@ void supprimer(){ // fonction de supprimer
     }
     c--;
 }
-    void   mettre_a_jour() { // fonction pour Modifier les information d une tache
+    void   mettre_a_jour() {
     int M;
     printf("Entrez le numéro de la tâche à mettre à jour : ");
     scanf("%d", &M);
@@ -115,7 +117,7 @@ void supprimer(){ // fonction de supprimer
     printf("Tâche mise à jour avec succès !\n");
 }
 
-void filtrer_par_priorite() { // fonction pour filtrer les taches selon mleur priorite
+void filtrer_par_priorite() {
     int priorite_filter;
     bool found = false;
 
@@ -142,17 +144,17 @@ void filtrer_par_priorite() { // fonction pour filtrer les taches selon mleur pr
 int main(){
     int choix ;
 
-    do{   // une boucle  pour afficher  le menu chaque  fois
+    do{
         printf("==============================\n");
         printf("::::::::::: MENU :::::::::::::\n");
         printf("==============================\n");
-        printf("           Entrer:\n"); // Demander à l’utilisateur d’entrer
-        //la tâche qu’il souhaite que le programme effectue
+        printf("           Entrer:\n");
         printf("1.pour ajouter une tache:\n");
         printf("2.pour Afficher la Liste des Tâches:\n");
         printf("3.pour Modifier une Tâche :\n");
         printf("4.pour Supprimer une Tâche : \n");
         printf("5.pour Filtrer les Tâches :\n");
+        printf("6.pour sortie\n");
         printf("votre choix:\n");
         scanf("%d",&choix);
         switch(choix){
@@ -176,6 +178,9 @@ int main(){
             case 5:
             printf("vous avez choisi le choix de filtrer. \n");
             filtrer_par_priorite();
+             break;
+             case 6:
+             break;
         }
     }
 while(choix < 6 );
