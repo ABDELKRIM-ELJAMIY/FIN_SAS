@@ -59,8 +59,8 @@ printf("Les taches  qui existent sont:\n");
 for(i=0;i<c;i++){
 printf("le titre: %s \n",k[i].titre);
 printf("la description :%s \n", k[i].description);
-printf("la date d'échéance: \n");
-//
+printf("Date d'échéance: %02d/%02d/%04d\n", k[i].date_echeance.jour, k[i].date_echeance.moi, k[i].date_echeance.anee);
+
 if (k[i].priorite == 1) {           // Si la priorité est (High)
     printf("Priorité : High\n");   // Affiche "Priorité : High"
 }
@@ -180,7 +180,7 @@ int main(){
             filtrer_par_priorite();
              break;
              case 6:
-             break;
+               break;
         }
     }
 while(choix < 6 );
